@@ -20,7 +20,21 @@ Os comandos assumem um sistema Ubuntu, mas os softwares são multiplataforma.
 
     mkdir 1
     avconv -i São\ Paulo\ a\ Maceió\ -\ Inicio\ da\ Viagem\ Parte\ 1-Qkg32qsbmC8.mp4 -qscale:v 2 -r 1/1 1/% 03d.jpg
-
+    
+<table>
+<thead>
+<tr>
+<th>Video 1</th>
+<th>Video 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://github.com/OSMBrasil/tesseract-mapillary/blob/master/imgs/frame-fmt-1.jpg" width="400"></td>
+<td><img src="https://github.com/OSMBrasil/tesseract-mapillary/blob/master/imgs/frame-fmt-2.jpg" width="400"></td>
+</tr>
+</tbody>
+</table>
 ### Cortando a parte com a camada dos dados e o capô do carro
 
     cd 1
@@ -32,8 +46,8 @@ Os comandos assumem um sistema Ubuntu, mas os softwares são multiplataforma.
     mkdir coord
     for i in *jpg ; do echo "Convertendo coordenadas $i" ; convert $i -crop [loc] coord/$i ; done
 
-    loc1=183x87+861+21
-    loc2=115x65+980+825
+    Video 1 loc=183x87+861+21
+    Video 2 loc=115x65+980+825
 
 ### Cortando as datas
 
