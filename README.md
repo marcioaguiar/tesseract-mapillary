@@ -49,6 +49,13 @@ Os comandos assumem um sistema Ubuntu, mas os softwares são multiplataforma.
     Video 1 loc=183x87+861+21
     Video 2 loc=115x65+980+825
 
+### Ajustando o contraste
+
+#### Video 2
+
+    convert [img] -level 0%,250% [out]
+    convert [out] +level 150%,-250% [final]
+
 ### Cortando as datas
 
     mkdir data
