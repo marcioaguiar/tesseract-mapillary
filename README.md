@@ -11,7 +11,7 @@ Para isso, faz-se necessário digitalizar as imagens, o que faremos com o softwa
 Os comandos assumem um sistema Ubuntu, mas os softwares são multiplataforma.
 
     sudo apt-get install youtube-dl libav-tools tesseract-ocr imagemagick
-    
+
 ### Baixando um vídeo
 
     youtube-dl https://www.youtube.com/watch?v=Qkg32qsbmC8
@@ -30,7 +30,10 @@ Os comandos assumem um sistema Ubuntu, mas os softwares são multiplataforma.
 ### Cortando as coordenadas
 
     mkdir coord
-    for i in *jpg ; do echo "Convertendo coordenadas $i" ; convert $i -crop 183x87+861+21 coord/$i ; done
+    for i in *jpg ; do echo "Convertendo coordenadas $i" ; convert $i -crop [loc] coord/$i ; done
+
+    loc1=183x87+861+21
+    loc2=115x65+980+825
 
 ### Cortando as datas
 
