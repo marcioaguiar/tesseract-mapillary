@@ -30,4 +30,9 @@ Os comandos assumem um sistema Ubuntu, mas os softwares são multiplataforma.
 ### Cortando as coordenadas
 
     mkdir coord
-    for i in *jpg ; do convert $i -crop 183x87+861+21 coord/$i ; done
+    for i in *jpg ; do echo "Convertendo coordenadas $i" ; convert $i -crop 183x87+861+21 coord/$i ; done
+
+### Cortando as datas
+
+    mkdir data
+    for i in *jpg ; do echo "Convertendo datas $i" ; convert $i -crop 196x87+1056+21 data/$i ; done
