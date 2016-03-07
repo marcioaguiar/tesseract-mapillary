@@ -28,7 +28,10 @@
 URL="https://www.youtube.com/watch?v=Qkg32qsbmC8"
 DIR="1"
 FILE="São Paulo a Maceió - Inicio da Viagem Parte 1-Qkg32qsbmC8.mp4"
+
 DIM="864x486+208+117"
+DIM_COORD_VIDEO1="183x87+861+21"
+DIM_COORD_VIDEO2="115x65+980+825"
 
 # Check dependencies
 
@@ -64,6 +67,8 @@ dependencies_check
 # apt-get install imagemagick
 # apt-get install libav-tools
 
+mkdir $DIR
+
 # TODO helper functions
 
 function extract_frames() {  # TODO
@@ -71,19 +76,25 @@ function extract_frames() {  # TODO
     echo
 }
 
-function reduce1() {  # TODO
-    # Cortando a parte com a camada dos dados e o capô do carro
-    cd 1
+
+function reduce1() {  # cutting data layer and car hood
+    cd $DIR
     mkdir crop
     for i in *jpg ; do
         echo "Converting $i"
         convert $i -crop $DIM crop/$i
     done
+    cd ..
 }
 
-function reduce2() {  # TODO
-    # Cortando as coordenadas
-    echo
+function reduce2() {  # cutting the coordinates area
+    cd $DIR
+    mkdir coord
+    for i in *jpg ; do
+        echo "Converting coordinates $i"
+        convert $i -crop $1 coord/$i
+    done
+    cd ..
 }
 
 function reduce3() {  # TODO
@@ -120,7 +131,7 @@ case "$1" in
         echo "not implemented"
         ;;
     test)
-        reduce1
+        reduce2 $DIM_COORD_VIDEO1
         ;;
     help)
         echo "not implemented"
