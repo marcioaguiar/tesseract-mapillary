@@ -66,3 +66,6 @@ Os comandos assumem um sistema Ubuntu, mas os softwares são multiplataforma.
 #### Video 1
 
     tesseract [img] [out] -l dsdigital --tessdata-dir ./tessdata/ -psm 6 --user-patterns ./tessdata/latlng.user-patterns -c tessedit_char_whitelist=-,0123456789
+
+#### Video 2
+     tesseract  [img] [out] -l helvetica --tessdata-dir ./tessdata/ -psm 6 --user-patterns ./tessdata/latlng.user-patterns -c tessedit_char_whitelist=-,0123456789 -c language_model_penalty_punc=0.1
