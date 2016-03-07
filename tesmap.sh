@@ -32,6 +32,7 @@ FILE="São Paulo a Maceió - Inicio da Viagem Parte 1-Qkg32qsbmC8.mp4"
 DIM="864x486+208+117"
 DIM_COORD_VIDEO1="183x87+861+21"
 DIM_COORD_VIDEO2="115x65+980+825"
+DIM_DATES="196x87+1056+21"
 
 # Check dependencies
 
@@ -97,14 +98,19 @@ function reduce2() {  # cutting the coordinates area
     cd ..
 }
 
-function reduce3() {  # TODO
-    # Cortando as datas
-    echo
+function reduce3() {  # cutting the dates
+    cd $DIR
+    mkdir time
+    for i in *jpg ; do
+        echo "Converting dates $i"
+        convert $i -crop $DIM_DATES time/$i
+    done
+    cd ..
 }
 
 function crop_frames() {  # TODO
     # call reduce1
-    # call reduce2
+    # call reduce2 DIM
     # call reduce3
     # TODO rename the tree functions above?
     echo
@@ -117,6 +123,9 @@ function download_video() {  # TODO
 }
 
 function adjust_constrast() {  # TODO (optional use)
+    # For video 2
+    #convert [img] -level 0%,250% [out]
+    #convert [out] +level 150%,-250% [final]
     echo
 }
 
@@ -131,7 +140,7 @@ case "$1" in
         echo "not implemented"
         ;;
     test)
-        reduce2 $DIM_COORD_VIDEO1
+        reduce3
         ;;
     help)
         echo "not implemented"
