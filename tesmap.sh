@@ -108,11 +108,25 @@ function extract_data() {  # TODO
     echo
 }
 
-# TODO parsing
+# Parsing parameters
 
-# info
-# download
-# adjust (optional)
-# make
-# all
-# help
+case "$1" in
+    info|download|adjust|make|all)
+        echo "not implemented"
+        ;;
+    help)
+        echo "not implemented"
+        ;;
+    *)
+        echo
+        echo "Options:"
+        echo
+        echo "  info"
+        echo "  download"
+        echo "  adjust    (optional)"
+        echo "  make"
+        echo "  all"
+        echo "  help"
+        echo
+        ;;
+esac
