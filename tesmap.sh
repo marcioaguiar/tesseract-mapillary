@@ -1,12 +1,33 @@
 #!/bin/bash
+#
+# The MIT License (MIT)
+#
+# Copyright (c) 2016 Alexandre Magno ‒ alexandre.mbm@gmail.com
+#
+# Permission is hereby granted, free of charge, to any person obtaining
+# a copy of this software and associated documentation files (the
+# "Software"), to deal in the Software without restriction, including
+# without limitation the rights to use, copy, modify, merge, publish,
+# distribute, sublicense, and/or sell copies of the Software, and to
+# permit persons to whom the Software is furnished to do so, subject to
+# the following conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+# LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+# OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+# WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-# Tudo será em inglês? Por enquanto assumo que sim. Esses comentários em português são apenas um esqueleto inicial.
 
-# TODO importar variáveis com "source"?
+# TODO import variables from "source"?
 
-# TODO licença (somente comentário)
+# TODO description (comment only)
 
-# TODO descrição (somente comentário)
 
 # Check dependencies
 
@@ -41,7 +62,8 @@ dependencies_check
 # apt-get install imagemagick
 # apt-get install libav-tools
 
-# TODO funções auxiliares
+
+# TODO helper functions
 
 function extract_frames() {  # TODO
     # Extraindo os quadros do vídeo (um por segundo)
@@ -67,12 +89,11 @@ function crop_frames() {  # TODO
     # call reduce1
     # call reduce2
     # call reduce3
-    
-    # TODO renomear as três funcões acima, se for o caso
+    # TODO rename the tree functions above?
     echo
 }
 
-# TODO funções principais
+# TODO main
 
 function download_video() {  # TODO
     echo
