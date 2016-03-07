@@ -60,3 +60,9 @@ Os comandos assumem um sistema Ubuntu, mas os softwares são multiplataforma.
 
     mkdir data
     for i in *jpg ; do echo "Convertendo datas $i" ; convert $i -crop 196x87+1056+21 data/$i ; done
+
+### OCR
+
+#### Video 1
+
+    tesseract [img] [out] -l dsdigital --tessdata-dir ./tessdata/ -psm 6 --user-patterns ./tessdata/latlng.user-patterns -c tessedit_char_whitelist=-,0123456789
