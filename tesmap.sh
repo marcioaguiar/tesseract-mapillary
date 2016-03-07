@@ -23,11 +23,12 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+# Variables
 
-# TODO import variables from "source"?
-
-# TODO description (comment only)
-
+URL="https://www.youtube.com/watch?v=Qkg32qsbmC8"
+DIR="1"
+FILE="São Paulo a Maceió - Inicio da Viagem Parte 1-Qkg32qsbmC8.mp4"
+DIM="864x486+208+117"
 
 # Check dependencies
 
@@ -63,7 +64,6 @@ dependencies_check
 # apt-get install imagemagick
 # apt-get install libav-tools
 
-
 # TODO helper functions
 
 function extract_frames() {  # TODO
@@ -73,7 +73,12 @@ function extract_frames() {  # TODO
 
 function reduce1() {  # TODO
     # Cortando a parte com a camada dos dados e o capô do carro
-    echo
+    cd 1
+    mkdir crop
+    for i in *jpg ; do
+        echo "Converting $i"
+        convert $i -crop $DIM crop/$i
+    done
 }
 
 function reduce2() {  # TODO
@@ -113,6 +118,9 @@ function extract_data() {  # TODO
 case "$1" in
     info|download|adjust|make|all)
         echo "not implemented"
+        ;;
+    test)
+        reduce1
         ;;
     help)
         echo "not implemented"
