@@ -46,7 +46,7 @@ Os comandos assumem um sistema Ubuntu, mas os softwares são multiplataforma.
     mkdir coord
     for i in *jpg ; do echo "Convertendo coordenadas $i" ; convert $i -crop [loc] coord/$i ; done
 
-    Video 1 loc=183x87+861+21
+    Video 1 loc=183x97+861+15
     Video 2 loc=115x65+980+825
 
 ### Ajustando o contraste
