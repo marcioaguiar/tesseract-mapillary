@@ -37,13 +37,14 @@ function is_ok() {
 }
 
 function passing() {
-    is_ok $1 || ( echo "Lacks dependency: $1" && exit 1 )
+    is_ok $1 || ( echo "Lacks command: $1" && exit 1 )
 }
 
 function dependencies_check()
 {
     passing "youtube-dl"
     passing "ffmpeg"
+    passing "convert"
 }
 
 dependencies_check
